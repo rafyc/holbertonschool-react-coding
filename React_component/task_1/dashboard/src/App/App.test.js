@@ -46,6 +46,17 @@ describe('when isLoggedIn is true', () => {
   })
 })
 
+describe('when ctrl + h are pressed ', () => {
+  it('logOut func passed as a prop is called + alert function with right str', () => {
+    const logOutMock = jest.fn();
+    const alert = jest.spyOn(global, 'alert');
+    shallow(<App logOut={logOutMock} />);
+    expect(alert);
+    expect(logOutMock);
+    jest.restoreAllMocks();
+  })
+})
+
 testComponentForNotifications(Header);
 testComponentForNotifications(Footer);
 testComponentForNotifications(Login);
