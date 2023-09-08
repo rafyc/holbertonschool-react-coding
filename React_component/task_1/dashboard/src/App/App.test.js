@@ -34,17 +34,9 @@ describe('when isLoggedIn is true', () => {
     const wrapper = shallow(<App isLoggedIn={true} />);
     const couseListWrapper = wrapper.find(CourseList)
     expect(couseListWrapper.exists()).toBe(true);
-
-
-    describe('when ctrl + h are pressed ', () => {
-      it('logOut func passed as a prop is called + alert function with right str', () => {
-        const logOutMock = jest.fn();
-        shallow(<App logOut={logOutMock} />);
-        expect(couseListWrapper.exists()).toBe(true);
-      })
-    })
   })
 })
+
 
 describe('when ctrl + h are pressed ', () => {
   it('logOut func passed as a prop is called + alert function with right str', () => {
